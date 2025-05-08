@@ -4,7 +4,7 @@ CPU		= msp430g2553
 
 CFLAGS		= -mmcu=${CPU} -I../h
 
-LDFLAGS		= -L/opt/ti/msp430_gcc/include
+LDFLAGS		= -L../lib -L/opt/ti/msp430_gcc/include/
 
 
 
@@ -18,8 +18,8 @@ all: project.elf
 
 
 
-project.elf: ${COMMON_OBJECTS} main.o state_machine.o led.o wdt_interrupt_handler.o p2_interrupt_handler.o switches.o buzzer.o  ../lib/libTimer.a
-	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^  -lLcd 
+project.elf: ${COMMON_OBJECTS} main.o state_machine.o led.o wdt_interrupt_handler.o p2_interrupt_handler.o switches.o buzzer.o gameFunc.o  ../lib/libTimer.a
+	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^ -lLcd
 
 
 load: project.elf
