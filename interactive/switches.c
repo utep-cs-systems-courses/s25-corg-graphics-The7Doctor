@@ -3,6 +3,7 @@
 #include "led.h"
 #include "buzzer.h"
 #include "state_machine.h"
+#include "gameFunc.h"
 
 unsigned int secondCount;
 unsigned int limit;

@@ -17,7 +17,7 @@ void switch_init();
 void switch_interrupt_handler();
 
 extern char switch1_state,switch2_state,switch3_state,switch4_state, switch_state_changed;
-extern char mode;
+extern char mode, modeOn;
 //extern char switch_state_changed;
 
 #endif

@@ -3,6 +3,9 @@
 #include "led.h"
 #include "switches.h"
 #include "buzzer.h"
+#include "gameFunc.h"
+
+extern void delay();
 
 void play_mary_had_a_little_lamb() {
 
@@ -170,6 +173,7 @@ void switch_state_advance(){
 
     case 2:
       play_mary_had_a_little_lamb();
+      
       break;
 	
     case 3:
@@ -183,18 +187,28 @@ void switch_state_advance(){
   }else{
       switch (switch_state){
       case 1:
-	buzzer_set_period(1300); //buzzer is set to a input when a certain button is pressed
+	//led
+	//buzzer_set_period(1300); //buzzer is set to a input when a certain button is pressed
 	break;
 
       case 2:
-	buzzer_set_period(200);
+	//select
+	
+	if(modeMusic){
+	  select_through_music();
+	}else{
+	  select_through_menu();
+	}
+	//	buzzer_set_period(200);
 	break;
 
       case 3:
-	buzzer_set_period(700);
+	set_menu_update_upward();
+	//buzzer_set_period(700);
 	break;
 
       case 4:
+	set_menu_update_downward();
 	buzzer_off();
 	break;
      }

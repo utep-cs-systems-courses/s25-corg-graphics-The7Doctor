@@ -7,6 +7,8 @@
 #include "lcddraw.h"
 #include "gameFunc.h"
 
+
+
 void main(void)
 
 {
@@ -24,14 +26,14 @@ void main(void)
 
 
 
-  clearScreen(COLOR_BLUE);
+  clearScreen(COLOR_BLACK);
 
   redrawScreen = 1;
   set_menu();
   while (1) {/* forever */
 
     if (redrawScreen) {
-
+       
        redrawScreen = 0;
        //       screen_update_user();
        screen_update_ball();

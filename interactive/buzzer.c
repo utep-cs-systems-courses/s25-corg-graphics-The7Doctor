@@ -3,7 +3,6 @@
 #include "buzzer.h"
 
 
-
 void buzzer_init(){
 
   timerAUpmode();
@@ -29,11 +28,12 @@ void buzzer_off(){
   CCR1 = 0;
 }
 
-void delay(unsigned int milliseconds){
+void delayCycles(){
 
-  unsigned int i;
-  for(i = 0; i < milliseconds; i++){
-    __delay_cycles(2000); //delay 1 millisecond
-  }
+  // delay_helper(milliseconds);
+    // unsigned int i;
+   // for(i = 0; i < milliseconds; i++){
+     __delay_cycles(2000); //delay 1 millisecond
+     // }
   
 }

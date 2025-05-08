@@ -9,12 +9,14 @@
 void screen_update_ball();
 void screen_update_user();
 void set_menu();
-
-
+void set_menu_update_upward();
+void set_menu_update_downward();
+void select_through_music();
+void select_through_menu();
 
 extern short drawPos[], controlPos[];
 extern short colVelocity, colLimits[];
 extern short redrawScreen;
-
+extern char modeMusic;
 
 #endif
