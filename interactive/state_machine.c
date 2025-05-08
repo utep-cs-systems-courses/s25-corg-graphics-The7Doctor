@@ -7,6 +7,70 @@
 
 extern void delay();
 
+void play_mega(){
+  buzzer_set_period(DD);
+  delay(W);
+  buzzer_set_period(DD);
+  delay(W);
+  buzzer_set_period(AD);
+  delay(W);
+  buzzer_set_period(AA);
+  delay(W);
+  buzzer_set_period(AA);
+  delay(W);
+  buzzer_set_period(DG);
+  delay(W);
+  buzzer_set_period(DF);
+  delay(W);
+  buzzer_set_period(DD);
+  delay(W);
+  buzzer_set_period(DF);
+  delay(W);
+  buzzer_set_period(DG);
+  delay(W);
+  buzzer_set_period(GC);
+  delay(W);
+  buzzer_set_period(GC);
+  delay(W);
+  buzzer_set_period(AD);
+  delay(W);
+  buzzer_set_period(AA);
+  delay(W);
+  buzzer_set_period(AA);
+  delay(W);
+  buzzer_set_period(DG);
+  delay(W);
+  buzzer_set_period(DF);
+  delay(W);
+  buzzer_set_period(DD);
+  delay(W);
+  buzzer_set_period(DF);
+  delay(W);
+  buzzer_set_period(DG);
+  delay(W);
+  buzzer_set_period(GB);
+  delay(W);
+  buzzer_set_period(GB);
+  delay(W);
+  buzzer_set_period(AD);
+  delay(W);
+  buzzer_set_period(AA);
+  delay(W);
+  buzzer_set_period(AA);
+  delay(W);
+  buzzer_set_period(DG);
+  delay(W);
+  buzzer_set_period(DF);
+  delay(W);
+  buzzer_set_period(DD);
+  delay(W);
+  buzzer_set_period(DF);
+  delay(W);
+  buzzer_set_period(DG);
+  delay(W);
+  buzzer_set_period(0);
+}
+
 void play_mary_had_a_little_lamb() {
 
   // "Mary had a little lamb" notes and periods
@@ -168,26 +232,32 @@ void switch_state_advance(){
   if(modeOn){
     switch (switch_state){
     case 1:
-      buzzer_off();
+      move_user_left();
+      // buzzer_off();
       break;
 
     case 2:
-      play_mary_had_a_little_lamb();
+      move_user_right();
+      //      play_mary_had_a_little_lamb();
       
       break;
 	
     case 3:
-      play_my_favorite_things();
+      move_user_up();
+      // play_my_favorite_things();
       break;
 
     case 4:
-      buzzer_set_period(3822);
+      move_user_down();
+      // buzzer_set_period(3822);
       break;
     }
   }else{
+    // set_menu();
       switch (switch_state){
       case 1:
 	//led
+	P1OUT ^= LEDS;
 	//buzzer_set_period(1300); //buzzer is set to a input when a certain button is pressed
 	break;
 
